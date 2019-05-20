@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace DataStructureEducation
@@ -12,57 +13,39 @@ namespace DataStructureEducation
             SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
             SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
             RevertArray revertArray = new RevertArray();
-            
+            CountEvenOddNumbers countEvenOddNumbers = new CountEvenOddNumbers();
+
             Console.WriteLine("Generated array: ");
             int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
-            
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                Console.WriteLine(numberArray[i]);
-            }
-            
+            PrintArray(numberArray);
+
             Console.WriteLine("Numbers much than 50:");
             int[] numbersMoreThen = selectNumberMoreThen.NumbersMoreThen(numberArray);
-            
-            for (int i = 0; i < numbersMoreThen.Length; i++)
-            {
-                Console.WriteLine(numbersMoreThen[i]);
-            }
-            
+            PrintArray(numbersMoreThen);
+
             Console.WriteLine("Numbers multiplicity of 3");
             int[] numbersMultiplicity = selectNumbersMultiplicity.NumbersMultiplicity(numberArray);
+            PrintArray(numbersMultiplicity);
 
-            for (int i = 0; i < numbersMultiplicity.Length; i++)
-            {
-                Console.WriteLine(numbersMultiplicity.Length);
-            }
-            
             Console.WriteLine("Upside down");
             int[] upsideDownArray = revertArray.UpsideDown(numberArray);
+            PrintArray(upsideDownArray);
 
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                Console.WriteLine(upsideDownArray[i]);
-            }
-            
             Console.WriteLine("Even\\Odd Count");
-            Dictionary<string, int> dictionaryEvenOddCount = new Dictionary<string, int>();
-            int evenCount = 0;
-            for (int i = 0; i < numberArray.Length; i++)
+            Dictionary<string, int> evenOdd = countEvenOddNumbers.EvenOddCount(numberArray);
+
+            foreach (var result in evenOdd)
             {
-                if (numberArray[i] % 2 == 0)
-                {
-                    evenCount += 1;
-                }
+                Console.WriteLine(result.Key + " " + result.Value);
             }
-            dictionaryEvenOddCount.Add("Count even", evenCount);
-            dictionaryEvenOddCount.Add("Count odd", numberArray.Length - evenCount);
-            foreach (KeyValuePair<string, int> oddCount1 in dictionaryEvenOddCount)
+        }
+
+        public static void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine("Key = {0}, Value = {1}", 
-                    oddCount1.Key, oddCount1.Value);
+                Console.WriteLine(array[i]);
             }
-            Console.WriteLine();
         }
     }
 }
