@@ -21,7 +21,6 @@ namespace DataStructureEducation
             {
                 Console.WriteLine("{0}\t", i);
             }
-            //TODO Уточнить у Паши что я такое сделал
             fromArrayToList.ForEach(PrintArrayToConsole);
             return fromArrayToList.ToArray();
         }
