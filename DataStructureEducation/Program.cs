@@ -8,29 +8,12 @@ namespace DataStructureEducation
     {
         static void Main(string[] args)
         {
-            
-            Random randomNumber = new Random();
-            int n = 10;
-            int[] numberArray = new int[n];
-            Console.WriteLine("Random array:");
-            for (int i = 0; i < n; i++)
-            {
-                numberArray[i] = randomNumber.Next(1,100);
-                Console.WriteLine(numberArray[i]);
-            }
-
+            CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
+            SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
+            Console.WriteLine("Generated array: ");
+            int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
             Console.WriteLine("Numbers much than 50:");
-            List<int> fromArrayToList = new List<int>();
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                if (numberArray[i] > 50)
-                {
-                    var result = numberArray[i];
-                    fromArrayToList.Add(result);
-                }
-            }
-            //TODO Уточнить у Паши что я такое сделал
-            fromArrayToList.ForEach(i => Console.WriteLine("{0}\t", i));
+            int[] numbersMoreThen = selectNumberMoreThen.NumbersMoreThen(numberArray);
 
             Console.WriteLine("Numbers multiplicity of 3");
             List<int> multiplicity = new List<int>();
@@ -45,7 +28,7 @@ namespace DataStructureEducation
             multiplicity.ForEach(i => Console.WriteLine("{0}\t", i));
             
             Console.WriteLine("Upside down");
-            int[] numberArrayForCopy = new int[n];
+            int[] numberArrayForCopy = new int[10];
             int i1, j;
             for (i1 = 0, j = numberArray.Length-1; i1 < numberArray.Length; i1++, j--)
             {
@@ -60,7 +43,6 @@ namespace DataStructureEducation
             Console.WriteLine("Even\\Odd Count");
             Dictionary<string, int> dictionaryEvenOddCount = new Dictionary<string, int>();
             int evenCount = 0;
-            int oddCount = 0;
             for (int i = 0; i < numberArray.Length; i++)
             {
                 if (numberArray[i] % 2 == 0)
