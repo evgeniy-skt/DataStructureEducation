@@ -11,16 +11,30 @@ namespace DataStructureEducation
             CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
             SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
             SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
+            
             Console.WriteLine("Generated array: ");
             int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
+            
             for (int i = 0; i < numberArray.Length; i++)
             {
                 Console.WriteLine(numberArray[i]);
             }
+            
             Console.WriteLine("Numbers much than 50:");
             int[] numbersMoreThen = selectNumberMoreThen.NumbersMoreThen(numberArray);
+            
+            for (int i = 0; i < numbersMoreThen.Length; i++)
+            {
+                Console.WriteLine(numbersMoreThen[i]);
+            }
+            
             Console.WriteLine("Numbers multiplicity of 3");
             int[] numbersMultiplicity = selectNumbersMultiplicity.NumbersMultiplicity(numberArray);
+
+            for (int i = 0; i < numbersMultiplicity.Length; i++)
+            {
+                Console.WriteLine(numbersMultiplicity.Length);
+            }
             
             Console.WriteLine("Upside down");
             int[] numberArrayForCopy = new int[10];
