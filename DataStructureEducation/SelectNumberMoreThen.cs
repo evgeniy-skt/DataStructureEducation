@@ -16,12 +16,6 @@ namespace DataStructureEducation
                     fromArrayToList.Add(result);
                 }
             }
-
-            void PrintArrayToConsole(int i)
-            {
-                Console.WriteLine("{0}\t", i);
-            }
-            fromArrayToList.ForEach(PrintArrayToConsole);
             return fromArrayToList.ToArray();
         }
         }

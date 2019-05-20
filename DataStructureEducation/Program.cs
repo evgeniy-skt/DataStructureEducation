@@ -11,6 +11,7 @@ namespace DataStructureEducation
             CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
             SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
             SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
+            RevertArray revertArray = new RevertArray();
             
             Console.WriteLine("Generated array: ");
             int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
@@ -37,16 +38,11 @@ namespace DataStructureEducation
             }
             
             Console.WriteLine("Upside down");
-            int[] numberArrayForCopy = new int[10];
-            int i1, j;
-            for (i1 = 0, j = numberArray.Length-1; i1 < numberArray.Length; i1++, j--)
-            {
-                numberArrayForCopy[j] = numberArray[i1];
-            }
+            int[] upsideDownArray = revertArray.UpsideDown(numberArray);
 
-            for (int i = 0; i < numberArrayForCopy.Length; i++)
+            for (int i = 0; i < numberArray.Length; i++)
             {
-                Console.WriteLine(numberArrayForCopy[i]);
+                Console.WriteLine(upsideDownArray[i]);
             }
             
             Console.WriteLine("Even\\Odd Count");
