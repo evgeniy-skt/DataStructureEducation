@@ -11,7 +11,6 @@ namespace DataStructureEducation
             for (int i = 0; i < numberArray.Length; i++)
             {
                 numberArray[i] = randomNumber.Next(1,100);
-                Console.WriteLine(numberArray[i]);
             }
 
             return numberArray;

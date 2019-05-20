@@ -13,6 +13,10 @@ namespace DataStructureEducation
             SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
             Console.WriteLine("Generated array: ");
             int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
+            for (int i = 0; i < numberArray.Length; i++)
+            {
+                Console.WriteLine(numberArray[i]);
+            }
             Console.WriteLine("Numbers much than 50:");
             int[] numbersMoreThen = selectNumberMoreThen.NumbersMoreThen(numberArray);
             Console.WriteLine("Numbers multiplicity of 3");
