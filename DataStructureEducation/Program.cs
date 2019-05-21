@@ -7,29 +7,28 @@ namespace DataStructureEducation
     {
         static void Main()
         {
-            CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
-            SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
-            SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
-            RevertArray revertArray = new RevertArray();
-            CountEvenOddNumbers countEvenOddNumbers = new CountEvenOddNumbers();
-
             Console.WriteLine("Generated array: ");
+            CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
             int[] numberArray = createArrayWithRandomNumbers.RandomArrayGenerate(10);
             PrintArray(numberArray);
 
             Console.WriteLine("Numbers much than 50:");
+            SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
             int[] numbersMoreThen = selectNumberMoreThen.NumbersMoreThen(numberArray);
             PrintArray(numbersMoreThen);
 
             Console.WriteLine("Numbers multiplicity of 3");
+            SelectNumbersMultiplicity selectNumbersMultiplicity = new SelectNumbersMultiplicity();
             int[] numbersMultiplicity = selectNumbersMultiplicity.NumbersMultiplicity(numberArray);
             PrintArray(numbersMultiplicity);
 
             Console.WriteLine("Upside down");
+            RevertArray revertArray = new RevertArray();
             int[] upsideDownArray = revertArray.UpsideDown(numberArray);
             PrintArray(upsideDownArray);
 
             Console.WriteLine("Even\\Odd Count");
+            CountEvenOddNumbers countEvenOddNumbers = new CountEvenOddNumbers();
             Dictionary<string, int> evenOdd = countEvenOddNumbers.EvenOddCount(numberArray);
 
             foreach (var result in evenOdd)
