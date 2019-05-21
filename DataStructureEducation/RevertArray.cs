@@ -1,5 +1,3 @@
-using System;
-
 namespace DataStructureEducation
 {
     public class RevertArray

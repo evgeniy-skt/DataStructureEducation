@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 
 namespace DataStructureEducation
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             CreateArrayWithRandomNumbers createArrayWithRandomNumbers = new CreateArrayWithRandomNumbers();
             SelectNumberMoreThen selectNumberMoreThen = new SelectNumberMoreThen();
