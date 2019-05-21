@@ -16,7 +16,6 @@ namespace DataStructureEducation
                     multiplicity.Add(result);
                 }
             }
-            multiplicity.ForEach(i => Console.WriteLine("{0}\t", i));
             return multiplicity.ToArray();
         }
     }
